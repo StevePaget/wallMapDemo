@@ -31,22 +31,22 @@ class Player():
         if keyPressed("d"):
             moved=True
             nextx += 5
-            checkPoints = [(self.x+30, self.y+20),(self.x+30,self.y-20)]
+            checkPoints = [(self.x+20, self.y+20),(self.x+20,self.y-20)]
             changeSpriteImage(self.sprite, 0*8+self.frame)    # 0*8 because right animations are the 0th set in the sprite sheet
         elif keyPressed("s"):
             moved=True
             nexty +=5
-            checkPoints = [(self.x-20, self.y+30),(self.x+20,self.y+30)]
+            checkPoints = [(self.x-15, self.y+30),(self.x+15,self.y+30)]
             changeSpriteImage(self.sprite, 1*8+self.frame)    # down facing animations are the 1st set
         elif keyPressed("a"):
             nextx -=5
             moved=True
-            checkPoints = [(self.x-30, self.y-20),(self.x-30,self.y+20)]
+            checkPoints = [(self.x-20, self.y-20),(self.x-20,self.y+20)]
             changeSpriteImage(self.sprite, 2*8+self.frame)    # and so on
         elif keyPressed("w"):
             nexty -=5
             moved=True
-            checkPoints = [(self.x-20, self.y-30),(self.x+20,self.y-30)]
+            checkPoints = [(self.x-15, self.y-30),(self.x+15,self.y-30)]
             changeSpriteImage(self.sprite,3*8+self.frame)
         # check background
         if moved:

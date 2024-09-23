@@ -53,10 +53,10 @@ class Player():
             for point in checkPoints:
                 colour = getPixel(wallmap,point[0], point[1])
                 if colour[:3] == (255,255,255):
-                    moved= False
-                    break
-                self.x = nextx
-                self.y = nexty
+                    moved = False
+        if moved: 
+            self.x = nextx
+            self.y = nexty
         else:
             changeSpriteImage(self.sprite, 1 * 8 + 5)  # the static facing front look
 
@@ -64,12 +64,14 @@ class Player():
 
 
 wallmap = makeSprite("walls.png")
+
 background = makeSprite("background.png")
 showSprite(background)
+showSprite(wallmap)
 p = Player(100,100)
 while True:
     p.move(wallmap)
-    moveSprite(background, 300-p.x, 300-p.y)
+    moveSprite(wallmap, 300-p.x, 300-p.y)
     updateDisplay()
     tick(60)
 endWait()
